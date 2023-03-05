@@ -1,7 +1,7 @@
 package CardPackage;
 
 import CardPackage.Card.Suit;
-import CardPackage.Card.Rank;
+import CardPackage.Card.Value;
 import java.util.Random;
 
 /**
@@ -21,7 +21,7 @@ public class CardHandGenerator {
         Random random = new Random();
         
         // let's get these lengths once
-        int numranks = Card.Rank.values().length;
+        int numValues = Card.Value.values().length;
         int numSuits = Card.Suit.values().length;
         
         // declare and initialize a hand of cards
@@ -32,10 +32,10 @@ public class CardHandGenerator {
             // get a random suit and value. Note we're not concerned about uniqueness
             // at this point
             Suit randomSuit = Card.Suit.values()[random.nextInt(numSuits)];
-            Rank randomrank = Card.Rank.values()[random.nextInt(numranks)];
+            Value randomValue = Card.Value.values()[random.nextInt(numValues)];
             
             // create a card and add it to the hand
-            Card card = new Card(randomSuit, randomrank);        
+            Card card = new Card(randomSuit, randomValue);        
             hand[i] = card;
             
         }
