@@ -13,33 +13,27 @@ import java.util.Random;
 public class CardHandGenerator {
 
     /**
-     * Generates a hand of a given size
+     * Generates a hand of a given size, passed as parameter 
      */
-    public static Card[] generateHand(int handSize) {
-        
-        // we'll use this to generate random numbers
+       public static Card[] generateHands(int num) {
+      
+         Card[] hand =new Card[num];
         Random random = new Random();
-        
-        // let's get these lengths once
-        int numValues = Card.Rank.values().length;
-        int numSuits = Card.Suit.values().length;
-        
-        // declare and initialize a hand of cards
-        Card[] hand = new Card[handSize];
-        
-        for (int i = 0; i < handSize; i++) {
-            
-            // get a random suit and value. Note we're not concerned about uniqueness
-            // at this point
-            Suit randomSuit = Card.Suit.values()[random.nextInt(numSuits)];
-            Rank randomRank = Card.Rank.values()[random.nextInt(numValues)];
-            
-            // create a card and add it to the hand
-            Card card = new Card(randomSuit, randomRank);        
-            hand[i] = card;
+        System.out.println("Computer Generated: ");
+        for (int i = 0;i<hand.length;i++){
+            Card.Rank rank = Card.Rank.values()[random.nextInt(14)];
+            Card.Suit suit;
+            if (rank == Card.Rank.values()[13]){
+                 suit = Card.Suit.values()[4];
+            }else{
+             suit = Card.Suit.values()[(random.nextInt(4))];
+            }
+           
+            Card CardforGuess =new Card(rank,suit);
+            hand[i]=CardforGuess; 
+            System.out.printf("\t Position: %3s \n\t\t Rank: %8s \n\t\t Suit: %8s \n\t\n" ,i+1,CardforGuess.getRank(),CardforGuess.getSuit());     
             
         }
-        
         return hand;
     }
 }

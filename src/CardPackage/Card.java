@@ -8,7 +8,7 @@ package CardPackage;
 public class Card {
 
     public enum Suit {
-        HEARTS, CLUBS, SPADES, DIAMONDS
+        HEARTS, CLUBS, SPADES, DIAMONDS, JOKER
     }
 
     public enum Rank {
@@ -18,7 +18,7 @@ public class Card {
     private final Suit suit;
     private final Rank rank;
 
-    public Card(Suit suit, Rank rank) {
+    public Card( Rank rank,Suit suit) {
         this.suit = suit;
         this.rank = rank;
     }

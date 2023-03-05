@@ -10,10 +10,10 @@ public class GamePlayer {
 
     public static void main(String[] args) {
 
-        Card[] cardHand = CardHandGenerator.generateHand(7);
-        for (Card card : cardHand) {
-            System.out.println(card.getRank() + " of " + card.getSuit());
-        }
+        Card[] cardHand = CardHandGenerator.generateHands(5);
+//        for (Card card : cardHand) {
+//            System.out.println(card.getRank() + " of " + card.getSuit());
+//        }
         
     }
 
