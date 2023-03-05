@@ -11,20 +11,20 @@ public class Card {
         HEARTS, CLUBS, SPADES, DIAMONDS
     }
 
-    public enum Value {
-        ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
+    public enum Rank {
+        TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE, JOKER
     }
     
     private final Suit suit;
-    private final Value value;
+    private final Rank rank;
 
-    public Card(Suit suit, Value value) {
+    public Card(Suit suit, Rank rank) {
         this.suit = suit;
-        this.value = value;
+        this.rank = rank;
     }
 
-    public Value getValue() {
-        return this.value;
+    public Rank getRank() {
+        return this.rank;
     }
 
     public Suit getSuit() {
