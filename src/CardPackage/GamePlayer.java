@@ -12,7 +12,7 @@ public class GamePlayer {
 
         Card[] cardHand = CardHandGenerator.generateHand(7);
         for (Card card : cardHand) {
-            System.out.println(card.getRank() + " of " + card.getSuit());
+            System.out.println(card.getValue() + " of " + card.getSuit());
         }
         
     }
