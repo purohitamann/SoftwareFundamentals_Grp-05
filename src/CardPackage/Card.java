@@ -30,4 +30,15 @@ public class Card {
     public Suit getSuit() {
         return this.suit;
     }
+    
+    public void isMatch(Card cardGuess) {
+        boolean match = false;
+        if (this.rank.equals(cardGuess.getRank())
+                && this.suit.equals(cardGuess.getSuit())) {
+
+            match = true;
+
+            System.out.println("---> It's a match");
+        }
+    }
 }
